@@ -1,15 +1,26 @@
+## Prototype Development for Image Generation Using the Stable Diffusion Model and Gradio Framework
 
+### AIM:
+To design and deploy a prototype application for image generation utilizing the Stable Diffusion model, integrated with the Gradio UI framework for interactive user engagement and evaluation.
 
+### PROBLEM STATEMENT:
+To develop an interactive application that allows users to generate custom images from text prompts using a state-of-the-art text-to-image model. The system should be user-friendly, enabling efficient testing and evaluation of the model's capabilities through a Gradio-based interface.
 
-# 📸 PromptPix: AI Image Creator
+### DESIGN STEPS: 
+#### STEP 1: Understand the API and Framework Requirements 
+- Identify the Stable Diffusion model's inference endpoint.  
+- Set up authentication using Hugging Face API keys and configure environment variables.
+  
+#### STEP 2: Develop Backend Logic 
+- Implement API request logic to send prompts and receive image outputs.  
+- Convert API responses (base64-encoded images) into displayable image formats.  
 
-**Designed and deployed a prototype app using the Stable Diffusion model integrated with Gradio UI.**  
-Enabled real-time image generation from user prompts via Hugging Face APIs.  
-Created a clean, interactive Gradio interface with labeled inputs and visual feedback.
-
-## 💻 Code
-
-```python
+#### STEP 3: Design Gradio Interface 
+- Build an interactive Gradio interface to accept prompts and display images.  
+- Add labels, descriptions, and examples for a user-friendly experience.
+  
+### PROGRAM:
+py
 import os
 import io
 from PIL import Image
@@ -44,8 +55,8 @@ def base64_to_pil(img_base64):
 
 # Gradio generation function
 def generate(prompt):
-    output = get_completion(prompt)
-    result_image = base64_to_pil(output["data"][0]["base64"])
+    output = get_completion(prompt)  # Get image data from API
+    result_image = base64_to_pil(output["data"][0]["base64"])  # Convert to PIL Image
     return result_image
 
 # Gradio interface
@@ -62,9 +73,9 @@ demo = gr.Interface(
 
 # Launch Gradio app
 demo.launch()
-```
 
-## OUTPUT:
+### OUTPUT:
 ![image](https://github.com/user-attachments/assets/2487fb7c-9f49-4efe-96ec-f719953000f3)
 
-
+### RESULT:
+Successfully designed and deployed a prototype application for image generation using the Stable Diffusion model, demonstrating interactive user engagement and the ability to generate high-quality images from text prompts.
