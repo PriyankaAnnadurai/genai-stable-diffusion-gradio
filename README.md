@@ -20,7 +20,7 @@ To develop an interactive application that allows users to generate custom image
 - Add labels, descriptions, and examples for a user-friendly experience.
   
 ### PROGRAM:
-py
+```py
 import os
 import io
 from PIL import Image
@@ -73,7 +73,7 @@ demo = gr.Interface(
 
 # Launch Gradio app
 demo.launch()
-
+```
 ### OUTPUT:
 ![image](https://github.com/user-attachments/assets/2487fb7c-9f49-4efe-96ec-f719953000f3)
 
